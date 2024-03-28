@@ -1,10 +1,15 @@
+using System.Data;
+
 namespace Vize_Odev_1
 {
-    public partial class main : Form
+    public partial class anaIslemler : Form
     {
-        public main()
+        
+        public anaIslemler()
         {
             InitializeComponent();
+            
+            
         }
 
         private void UyeEklemeButton_Click(object sender, EventArgs e)
@@ -21,9 +26,13 @@ namespace Vize_Odev_1
 
         private void EmanetIslemleriButton_Click(object sender, EventArgs e)
         {
-            EmanetIslemeleri emanetIslemleri = new EmanetIslemeleri();
+            EmanetVerme emanetIslemleri = new EmanetVerme();
             emanetIslemleri.Show();
         }
+
+
+
+
+
     }
 }
-//

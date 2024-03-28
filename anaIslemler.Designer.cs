@@ -1,6 +1,6 @@
 ﻿namespace Vize_Odev_1
 {
-    partial class main
+    partial class anaIslemler
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,7 +35,7 @@
             // 
             // UyeEklemeButton
             // 
-            UyeEklemeButton.Location = new Point(153, 115);
+            UyeEklemeButton.Location = new Point(168, 103);
             UyeEklemeButton.Name = "UyeEklemeButton";
             UyeEklemeButton.Size = new Size(135, 74);
             UyeEklemeButton.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // KitapEklemeButton
             // 
-            KitapEklemeButton.Location = new Point(327, 115);
+            KitapEklemeButton.Location = new Point(384, 103);
             KitapEklemeButton.Name = "KitapEklemeButton";
             KitapEklemeButton.Size = new Size(135, 74);
             KitapEklemeButton.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // EmanetIslemleriButton
             // 
-            EmanetIslemleriButton.Location = new Point(503, 115);
+            EmanetIslemleriButton.Location = new Point(593, 103);
             EmanetIslemleriButton.Name = "EmanetIslemleriButton";
             EmanetIslemleriButton.Size = new Size(135, 74);
             EmanetIslemleriButton.TabIndex = 2;
@@ -63,7 +63,7 @@
             EmanetIslemleriButton.UseVisualStyleBackColor = true;
             EmanetIslemleriButton.Click += EmanetIslemleriButton_Click;
             // 
-            // main
+            // anaIslemler
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -71,7 +71,7 @@
             Controls.Add(EmanetIslemleriButton);
             Controls.Add(KitapEklemeButton);
             Controls.Add(UyeEklemeButton);
-            Name = "main";
+            Name = "anaIslemler";
             Text = "Main";
             ResumeLayout(false);
         }
