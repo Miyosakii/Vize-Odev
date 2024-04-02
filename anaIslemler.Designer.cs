@@ -35,7 +35,7 @@
             // 
             // UyeEklemeButton
             // 
-            UyeEklemeButton.Location = new Point(168, 103);
+            UyeEklemeButton.Location = new Point(594, 103);
             UyeEklemeButton.Name = "UyeEklemeButton";
             UyeEklemeButton.Size = new Size(135, 74);
             UyeEklemeButton.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // EmanetIslemleriButton
             // 
-            EmanetIslemleriButton.Location = new Point(593, 103);
+            EmanetIslemleriButton.Location = new Point(194, 103);
             EmanetIslemleriButton.Name = "EmanetIslemleriButton";
             EmanetIslemleriButton.Size = new Size(135, 74);
             EmanetIslemleriButton.TabIndex = 2;

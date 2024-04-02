@@ -71,5 +71,49 @@ namespace Vize_Odev_1
                 File.WriteAllText(dosya_yolu, yazilacak, Encoding.UTF8);
             }
         }
+
+        private void uyeEklemeDuzenleButton_Click(object sender, EventArgs e)
+        {
+            UyeIslemleri uyeislemleri = new UyeIslemleri();
+            uyeislemleri.Numara = uyeEklemeUyeNoTextBox.Text;
+            uyeislemleri.Ad = uyeEklemeUyeIsimTextBox.Text;
+            uyeislemleri.SoyAd = uyeEklemeUyeSoyIsimTextBox.Text;
+
+            uyeislemleri.Duzenle(dt);
+            uyeler.Add(uyeislemleri);
+
+            uyeEklemeUyeIsimTextBox.Text = "";
+            uyeEklemeUyeNoTextBox.Text = "";
+            uyeEklemeUyeSoyIsimTextBox.Text = "";
+        }
+
+        private void uyeEklemeDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                uyeEklemeUyeIsimTextBox.Text = uyeEklemeDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                uyeEklemeUyeSoyIsimTextBox.Text = uyeEklemeDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                uyeEklemeUyeNoTextBox.Text = uyeEklemeDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            }
+            catch (Exception ex) { }
+        }
+
+        private void uyeEklemeSilButton_Click(object sender, EventArgs e)
+        {
+            if(uyeEklemeDataGridView.SelectedRows.Count > 0) 
+            {
+                foreach (DataGridViewRow row in uyeEklemeDataGridView.SelectedRows)
+                {
+                    uyeEklemeDataGridView.Rows.Remove(row);
+                }               
+            }
+            else
+            {
+                MessageBox.Show("Lütfen silmek için bir satır seçin.");
+            }
+            uyeEklemeUyeIsimTextBox.Text = "";
+            uyeEklemeUyeNoTextBox.Text = "";
+            uyeEklemeUyeSoyIsimTextBox.Text = "";
+        }
     }
 }

@@ -35,13 +35,15 @@
             emanetIslemleriEmanetAlButton = new Button();
             emanetVermeDataGridView = new DataGridView();
             emanetIslemleriDosyayaKaydetButton = new Button();
+            emanetIslemleriDuzenlemeButton = new Button();
+            emanetVermeSilButton = new Button();
             ((System.ComponentModel.ISupportInitialize)emanetVermeDataGridView).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 34);
+            label1.Location = new Point(46, 83);
             label1.Name = "label1";
             label1.Size = new Size(58, 20);
             label1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(46, 89);
+            label2.Location = new Point(46, 35);
             label2.Name = "label2";
             label2.Size = new Size(68, 20);
             label2.TabIndex = 1;
@@ -58,17 +60,17 @@
             // 
             // emanetIslemleriUyeNoTextBox
             // 
-            emanetIslemleriUyeNoTextBox.Location = new Point(146, 31);
+            emanetIslemleriUyeNoTextBox.Location = new Point(146, 80);
             emanetIslemleriUyeNoTextBox.Name = "emanetIslemleriUyeNoTextBox";
             emanetIslemleriUyeNoTextBox.Size = new Size(197, 27);
-            emanetIslemleriUyeNoTextBox.TabIndex = 1;
+            emanetIslemleriUyeNoTextBox.TabIndex = 2;
             // 
             // emanetIslmeleriKitapNoTextBox
             // 
-            emanetIslmeleriKitapNoTextBox.Location = new Point(146, 89);
+            emanetIslmeleriKitapNoTextBox.Location = new Point(146, 35);
             emanetIslmeleriKitapNoTextBox.Name = "emanetIslmeleriKitapNoTextBox";
             emanetIslmeleriKitapNoTextBox.Size = new Size(197, 27);
-            emanetIslmeleriKitapNoTextBox.TabIndex = 2;
+            emanetIslmeleriKitapNoTextBox.TabIndex = 1;
             // 
             // emanetIslemleriEmanetAlButton
             // 
@@ -88,22 +90,45 @@
             emanetVermeDataGridView.RowHeadersWidth = 51;
             emanetVermeDataGridView.Size = new Size(370, 318);
             emanetVermeDataGridView.TabIndex = 5;
+            emanetVermeDataGridView.SelectionChanged += emanetVermeDataGridView_SelectionChanged;
             // 
             // emanetIslemleriDosyayaKaydetButton
             // 
             emanetIslemleriDosyayaKaydetButton.Location = new Point(239, 180);
             emanetIslemleriDosyayaKaydetButton.Name = "emanetIslemleriDosyayaKaydetButton";
             emanetIslemleriDosyayaKaydetButton.Size = new Size(152, 51);
-            emanetIslemleriDosyayaKaydetButton.TabIndex = 6;
+            emanetIslemleriDosyayaKaydetButton.TabIndex = 4;
             emanetIslemleriDosyayaKaydetButton.Text = "Dosyaya Kaydet";
             emanetIslemleriDosyayaKaydetButton.UseVisualStyleBackColor = true;
             emanetIslemleriDosyayaKaydetButton.Click += emanetIslemleriDosyayaKaydetButton_Click;
+            // 
+            // emanetIslemleriDuzenlemeButton
+            // 
+            emanetIslemleriDuzenlemeButton.Location = new Point(81, 248);
+            emanetIslemleriDuzenlemeButton.Name = "emanetIslemleriDuzenlemeButton";
+            emanetIslemleriDuzenlemeButton.Size = new Size(152, 51);
+            emanetIslemleriDuzenlemeButton.TabIndex = 5;
+            emanetIslemleriDuzenlemeButton.Text = "Düzenleme";
+            emanetIslemleriDuzenlemeButton.UseVisualStyleBackColor = true;
+            emanetIslemleriDuzenlemeButton.Click += emanetIslemleriDuzenlemeButton_Click;
+            // 
+            // emanetVermeSilButton
+            // 
+            emanetVermeSilButton.Location = new Point(242, 248);
+            emanetVermeSilButton.Name = "emanetVermeSilButton";
+            emanetVermeSilButton.Size = new Size(149, 51);
+            emanetVermeSilButton.TabIndex = 10;
+            emanetVermeSilButton.Text = "Sil";
+            emanetVermeSilButton.UseVisualStyleBackColor = true;
+            emanetVermeSilButton.Click += emanetVermeSilButton_Click;
             // 
             // EmanetVerme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 403);
+            Controls.Add(emanetVermeSilButton);
+            Controls.Add(emanetIslemleriDuzenlemeButton);
             Controls.Add(emanetIslemleriDosyayaKaydetButton);
             Controls.Add(emanetVermeDataGridView);
             Controls.Add(emanetIslemleriEmanetAlButton);
@@ -127,5 +152,7 @@
         private Button emanetIslemleriEmanetAlButton;
         private DataGridView emanetVermeDataGridView;
         private Button emanetIslemleriDosyayaKaydetButton;
+        private Button emanetIslemleriDuzenlemeButton;
+        private Button emanetVermeSilButton;
     }
 }

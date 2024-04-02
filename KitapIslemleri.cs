@@ -30,9 +30,17 @@ namespace Vize_Odev_1
 
         public void TabloyaEkle(DataTable tablo)
         {
-            tablo.Rows.Add(new object[] {this.KitapAdi,
-                                         this.KitapYazar,
-                                         this.KitapNo});
+            tablo.Rows.Add(new object[] {this.KitapNo,
+                                         this.KitapAdi,
+                                         this.KitapYazar});
         }
+        public void Duzenle (DataTable tablo)
+        { 
+            tablo.Rows.Clear(); 
+            tablo.Rows.Add(new object[] {this.KitapNo,
+                                         this.KitapAdi,
+                                         this.KitapYazar});
+        }
+       
     }
 }

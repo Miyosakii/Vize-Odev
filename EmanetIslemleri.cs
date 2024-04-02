@@ -28,9 +28,16 @@ namespace Vize_Odev_1
 
         public void TabloyaEkle(DataTable tablo)
         {
-            tablo.Rows.Add(new object[] {this.UyeNo,
-                                         this.KitapNo});
+            tablo.Rows.Add(new object[] {this.KitapNo,
+                                         this.UyeNo});
         }
 
+        public void Duzenle(DataTable tablo)
+        {
+            tablo.Rows.Clear();
+            tablo.Rows.Add(new object[] {this.KitapNo,
+                                         this.UyeNo});
+
+        }
     }
 }

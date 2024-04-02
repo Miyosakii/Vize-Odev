@@ -34,7 +34,7 @@ namespace Vize_Odev_1
         {
 
             KitapIslemleri kitapIslemleri = new KitapIslemleri();
-            kitapIslemleri.KitapNo = kitapEklemeKitapNotextBox.Text;
+            kitapIslemleri.KitapNo = kitapEklemeKitapNoTextBox.Text;
             kitapIslemleri.KitapYazar = kitapEklemeKitapYazarTextBox.Text;
             kitapIslemleri.KitapAdi = kitapEklemeKitapAdıTextBox.Text;
 
@@ -42,11 +42,11 @@ namespace Vize_Odev_1
             kitaplar.Add(kitapIslemleri);
 
             kitapEklemeKitapAdıTextBox.Text = "";
-            kitapEklemeKitapNotextBox.Text = "";
+            kitapEklemeKitapNoTextBox.Text = "";
             kitapEklemeKitapYazarTextBox.Text = "";
 
         }
-        
+
         private void kitapEklemeDosyadanYukleButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -74,6 +74,55 @@ namespace Vize_Odev_1
                 string dosya_yolu = dialog.FileName;
                 File.WriteAllText(dosya_yolu, yazilacak, Encoding.UTF8);
             }
+        }
+
+        private void kitapEklemeDuzenleButton_Click(object sender, EventArgs e)
+        {
+            KitapIslemleri kitapIslemleri = new KitapIslemleri();
+            kitapIslemleri.KitapNo = kitapEklemeKitapNoTextBox.Text;
+            kitapIslemleri.KitapYazar = kitapEklemeKitapYazarTextBox.Text;
+            kitapIslemleri.KitapAdi = kitapEklemeKitapAdıTextBox.Text;
+
+            kitapIslemleri.Duzenle(dt);
+            kitaplar.Add(kitapIslemleri);
+
+            kitapEklemeKitapAdıTextBox.Text = "";
+            kitapEklemeKitapNoTextBox.Text = "";
+            kitapEklemeKitapYazarTextBox.Text = "";
+
+
+        }
+
+        private void kitapEklemeDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                kitapEklemeKitapNoTextBox.Text = kitapEklemeDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                kitapEklemeKitapAdıTextBox.Text = kitapEklemeDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                kitapEklemeKitapYazarTextBox.Text = kitapEklemeDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+
+            }
+            catch (Exception ex) { }
+        }
+
+
+        private void kitapEklemeSilButton_Click_1(object sender, EventArgs e)
+        {
+            if (kitapEklemeDataGridView.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in kitapEklemeDataGridView.SelectedRows)
+                {
+                    kitapEklemeDataGridView.Rows.Remove(row);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Lütfen silmek için bir satır seçin.");
+            }
+            kitapEklemeKitapAdıTextBox.Text = "";
+            kitapEklemeKitapNoTextBox.Text = "";
+            kitapEklemeKitapYazarTextBox.Text = "";
         }
     }
 }
